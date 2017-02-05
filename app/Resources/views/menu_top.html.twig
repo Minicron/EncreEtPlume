@@ -1,0 +1,15 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul  class="nav navbar-nav">
+                {% set route = app.request.attributes.get('_route') %}
+                <li {{ (route == 'home') ? 'class="active"' }}>
+                    <a href="{{ path('home') }}">Home</a>
+                </li>
+                <li {{ (route == 'signing') ?  'class="active"' }}>
+                    <a href="{{ path('signing') }}">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

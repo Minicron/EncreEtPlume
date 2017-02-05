@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+{% block body %}
+    <div id="main_content">
+        {% for blogpost in blogpost_list %}
+            <div class="blogpost">
+                <h2>{{ blogpost.title }}</h2>
+                <p>
+                   {{ blogpost.content }}
+                </p>
+                <h4> Ecrit par {{ blogpost.author }} le {{ blogpost.published_at|date("m/d/Y") }}</h4>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
